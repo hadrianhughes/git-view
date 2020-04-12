@@ -21,6 +21,7 @@ export const Input = styled.input`
 export const Button = styled.button`
   background-color: ${colors.primary};
   border: 0;
+  cursor: pointer;
   height: ${rem(buttonSize)};
   position: absolute;
   right: ${rem(10)};
