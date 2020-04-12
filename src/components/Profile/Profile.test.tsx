@@ -1,9 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Profile from './index';
+import { Name, Avatar } from './styles';
 
 const defaultProps = {
-  avatar: ''
+  avatar: '',
+  userName: '',
+  url: ''
 };
 
 describe('component: Profile', () => {
@@ -14,13 +17,13 @@ describe('component: Profile', () => {
 
     expect(
       wrapper
-        .find('a')
+        .find(Name)
         .length
     ).toBe(1);
 
     expect(
       wrapper
-        .find('img')
+        .find(Avatar)
         .length
     ).toBe(1);
   });
@@ -36,7 +39,7 @@ describe('component: Profile', () => {
 
     expect(
       wrapper
-        .find('img')
+        .find(Avatar)
         .props()
         .src
     ).toBe(imgSrc);
@@ -65,7 +68,7 @@ describe('component: Profile', () => {
 
     expect(
       wrapper
-        .find('a')
+        .find(Name)
         .props()
         .href
     ).toBe(url);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Avatar, Wrapper, Name } from './styles';
 
 interface PropTypes {
   avatar: string;
@@ -7,12 +8,10 @@ interface PropTypes {
 }
 
 const Profile = ({ avatar, userName, url }: PropTypes) => (
-  <section>
-    <a href={url} target="_blank" rel="noopener noreferrer">
-      <span>{userName}</span>
-      <img src={avatar} alt={userName} />
-    </a>
-  </section>
+  <Wrapper>
+    <Name href={url} target="_blank" rel="noopener noreferrer">{userName}</Name>
+    <Avatar src={avatar} alt={userName} />
+  </Wrapper>
 );
 
 export default Profile;
