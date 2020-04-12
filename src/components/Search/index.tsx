@@ -2,8 +2,8 @@ import React from 'react';
 
 interface PropTypes {
   value: string;
-  onChange: (string) => void;
-  onSubmit: () => void;
+  onChange: (SyntheticEvent) => void;
+  onSubmit: (any) => void;
   placeholder?: string;
 }
 
