@@ -10,3 +10,5 @@ export const breakpoints = {
   medium: 768,
   large: 1024
 };
+
+export const appMaxWidth = 1200;
