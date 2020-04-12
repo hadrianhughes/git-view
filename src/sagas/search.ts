@@ -15,7 +15,7 @@ function* search () {
 
   const user = get(['data', 'user'])(result);
   if (user) {
-    console.info(user);
+    yield put({ type: 'SET_USER', payload: user });
   }
 }
 
