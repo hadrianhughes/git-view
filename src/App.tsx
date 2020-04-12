@@ -1,11 +1,11 @@
-import React, { StatelessComponent as C } from 'react';
+import React, { Fragment, StatelessComponent as C } from 'react';
 import GlobalStyles from './styles/global';
 
 const App = (): C => (
-  <div>
+  <Fragment>
     <GlobalStyles />
     Hello World!
-  </div>
+  </Fragment>
 );
 
 export default App;
