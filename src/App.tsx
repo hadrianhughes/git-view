@@ -1,6 +1,7 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import GlobalStyles from './styles/global';
 import Search from './components/Search';
+import { Wrapper } from './AppStyles';
 
 const App = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -15,13 +16,14 @@ const App = () => {
   };
 
   return (
-    <Fragment>
+    <Wrapper>
       <GlobalStyles />
       <Search
         value={searchValue}
         onChange={handleChangeSearch}
-        onSubmit={handleSearch} />
-    </Fragment>
+        onSubmit={handleSearch}
+        placeholder="Search..." />
+    </Wrapper>
   );
 };
 
