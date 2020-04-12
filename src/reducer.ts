@@ -4,11 +4,13 @@ import get from './utils/get';
 interface AppState {
   searchValue: string;
   avatar: string;
+  userName: string;
 }
 
 export const initialState: AppState = {
   searchValue: '',
-  avatar: ''
+  avatar: '',
+  userName: ''
 };
 
 function reducer (state: AppState = initialState, action: Action): AppState {
@@ -21,7 +23,8 @@ function reducer (state: AppState = initialState, action: Action): AppState {
     case 'SET_USER':
       return {
         ...state,
-        avatar: get(['avatarUrl'])(action.payload)
+        avatar: get(['avatarUrl'])(action.payload),
+        userName: state.searchValue
       };
     default:
       return state;

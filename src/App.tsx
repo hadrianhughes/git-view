@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import GlobalStyles from './styles/global';
 import Search from './components/Search/container';
+import Profile from './components/Profile/container';
 import { Wrapper } from './AppStyles';
 import reducer from './reducer';
 import sagas from './sagas';
@@ -22,6 +23,7 @@ const App = () => (
     <Wrapper>
       <GlobalStyles />
       <Search />
+      <Profile />
     </Wrapper>
   </Provider>
 );

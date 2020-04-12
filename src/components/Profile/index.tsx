@@ -8,7 +8,7 @@ interface PropTypes {
 
 const Profile = ({ avatar, userName, url }: PropTypes) => (
   <section>
-    <a href={url}>
+    <a href={url} target="_blank" rel="noopener noreferrer">
       <span>{userName}</span>
       <img src={avatar} alt={userName} />
     </a>
