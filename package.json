@@ -7,7 +7,7 @@
     "build": "webpack",
     "start": "webpack-dev-server",
     "test": "jest",
-    "lint": "eslint ./src/**/*"
+    "lint": "eslint './src/**'"
   },
   "author": "Hadrian Hughes",
   "license": "GPL-3.0",
@@ -42,7 +42,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run lint && npm run test"
     }
   }
 }

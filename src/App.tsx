@@ -1,7 +1,7 @@
-import React, { Fragment, StatelessComponent as C } from 'react';
+import React, { Fragment } from 'react';
 import GlobalStyles from './styles/global';
 
-const App = (): C => (
+const App = () => (
   <Fragment>
     <GlobalStyles />
     Hello World!
