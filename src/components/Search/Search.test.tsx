@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Search from './index';
+import { Input, Button } from './styles';
 
 const defaultProps = {
   value: '',
@@ -14,8 +15,8 @@ describe('component: Search', () => {
       <Search {...defaultProps} />
     );
 
-    expect(wrapper.find('input').length).toBe(1);
-    expect(wrapper.find('button').length).toBe(1);
+    expect(wrapper.find(Input).length).toBe(1);
+    expect(wrapper.find(Button).length).toBe(1);
   });
 
   it('Should accept a `value` prop and use it as the `input` tag\'s value', () => {
@@ -29,7 +30,7 @@ describe('component: Search', () => {
 
     expect(
       wrapper
-        .find('input')
+        .find(Input)
         .props()
         .value
       ).toBe(testValue);
@@ -45,7 +46,7 @@ describe('component: Search', () => {
     );
 
     wrapper
-      .find('input')
+      .find(Input)
       .simulate('change');
 
     expect(changeFn).toHaveBeenCalled();
@@ -61,7 +62,7 @@ describe('component: Search', () => {
     );
 
     wrapper
-      .find('button')
+      .find(Button)
       .simulate('click');
 
     expect(submitFn).toHaveBeenCalled();
@@ -78,7 +79,7 @@ describe('component: Search', () => {
 
     expect(
       wrapper
-        .find('input')
+        .find(Input)
         .props()
         .placeholder
     ).toBe(testPlaceholder);

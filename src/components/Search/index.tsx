@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input, Button, Wrapper } from './styles';
 
 interface PropTypes {
   value: string;
@@ -13,14 +14,14 @@ const Search = ({
   onSubmit,
   placeholder
 }: PropTypes) => (
-  <div>
-    <input
+  <Wrapper>
+    <Input
       type="text"
       value={value}
       placeholder={placeholder}
       onChange={onChange} />
-    <button onClick={onSubmit}>Submit</button>
-  </div>
+    <Button onClick={onSubmit}>Submit</Button>
+  </Wrapper>
 );
 
 export default Search;
