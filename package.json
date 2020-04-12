@@ -4,7 +4,10 @@
   "description": "A tool for visualising a GitHub user's activity",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "start": "webpack-dev-server",
+    "test": "jest",
+    "lint": "eslint ."
   },
   "author": "Hadrian Hughes",
   "license": "GPL-3.0",
@@ -22,6 +25,8 @@
     "copy-webpack-plugin": "^5.1.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
     "husky": "^4.2.5",
     "jest": "^25.3.0",
     "react": "^16.13.1",
@@ -32,5 +37,10 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": ""
+    }
   }
 }
