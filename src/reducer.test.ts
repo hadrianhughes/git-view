@@ -19,4 +19,19 @@ describe('reducer function', () => {
       searchValue: newSearchValue
     });
   });
+
+  it('Should accept a previous state and a SET_USER action and return the state with updated avatar', () => {
+    const newAvatar = 'avatarURL';
+    const action = {
+      type: 'SET_USER',
+      payload: {
+        avatarUrl: newAvatar
+      }
+    };
+
+    expect(reducer(initialState, action)).toStrictEqual({
+      ...initialState,
+      avatar: newAvatar
+    });
+  });
 });
