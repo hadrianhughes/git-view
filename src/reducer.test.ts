@@ -20,18 +20,24 @@ describe('reducer function', () => {
     });
   });
 
-  it('Should accept a previous state and a SET_USER action and return the state with updated avatar', () => {
+  it('Should accept a previous state and a SET_USER action and return the state with updated avatar and repositories', () => {
     const newAvatar = 'avatarURL';
+    const newRepos = [ { foo: 'bar' } ];
+
     const action = {
       type: 'SET_USER',
       payload: {
-        avatarUrl: newAvatar
+        avatarUrl: newAvatar,
+        repositories: {
+          nodes: newRepos
+        }
       }
     };
 
     expect(reducer(initialState, action)).toStrictEqual({
       ...initialState,
-      avatar: newAvatar
+      avatar: newAvatar,
+      repositories: newRepos
     });
   });
 });
