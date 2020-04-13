@@ -3,9 +3,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import GlobalStyles from './styles/global';
-import Search from './components/Search/container';
-import Profile from './components/Profile/container';
-import { Wrapper } from './AppStyles';
+import Layout from './components/Layout/container';
 import reducer from './reducer';
 import sagas from './sagas';
 
@@ -20,11 +18,8 @@ sagas.forEach(sagaMiddleware.run);
 
 const App = () => (
   <Provider store={store}>
-    <Wrapper>
-      <GlobalStyles />
-      <Search />
-      <Profile />
-    </Wrapper>
+    <GlobalStyles />
+    <Layout />
   </Provider>
 );
 

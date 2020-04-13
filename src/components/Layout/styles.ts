@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { appMaxWidth } from './styles/settings';
-import { minWidth, rem } from './styles/tools';
+import { appMaxWidth } from '../../styles/settings';
+import { minWidth, rem } from '../../styles/tools';
 
 export const Wrapper = styled.div`
   display: grid;
