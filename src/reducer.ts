@@ -1,16 +1,20 @@
-import { Action } from './types';
-import get from './utils/get';
+import { Action, Language } from './types';
+import { get } from './utils';
 
 interface AppState {
   searchValue: string;
   avatar: string;
   userName: string;
+  repositories: Array<object>;
+  userLanguages: Array<Language>;
 }
 
 export const initialState: AppState = {
   searchValue: '',
   avatar: '',
-  userName: ''
+  userName: '',
+  repositories: [],
+  userLanguages: []
 };
 
 function reducer (state: AppState = initialState, action: Action): AppState {
@@ -23,8 +27,9 @@ function reducer (state: AppState = initialState, action: Action): AppState {
     case 'SET_USER':
       return {
         ...state,
-        avatar: get(['avatarUrl'])(action.payload),
-        userName: state.searchValue
+        avatar: get(['avatarUrl'])(action.payload, ''),
+        userName: state.searchValue,
+        repositories: get(['repositories', 'nodes'])(action.payload, [])
       };
     default:
       return state;

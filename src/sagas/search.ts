@@ -1,5 +1,5 @@
 import { takeEvery, select, call, put } from 'redux-saga/effects';
-import get from '../utils/get';
+import { get } from '../utils';
 import { searchUser } from '../api';
 
 function* search () {

@@ -1,4 +1,4 @@
-import get from './get';
+import { get } from './index';
 
 describe('function: get', () => {
   it('Should accept an array of strings and return a function', () => {
