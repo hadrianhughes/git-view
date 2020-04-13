@@ -1,28 +1,29 @@
 import React from 'react';
+import { Heading, List, Item } from './styles';
 
-interface Item {
+interface ItemProp {
   textLeft: string;
   textRight: string;
 }
 
 interface PropTypes {
   heading: string;
-  items: Array<Item>;
+  items: Array<ItemProp>;
 }
 
 const Leaderboard = ({ heading, items }: PropTypes) => (
   <section>
-    <h2>{heading}</h2>
-    <ul>
+    <Heading>{heading}</Heading>
+    <List>
       {
         items.map((item, i) => (
-          <li key={i}>
+          <Item key={i}>
             <span>{item.textLeft}</span>
             <span>{item.textRight}</span>
-          </li>
+          </Item>
         ))
       }
-    </ul>
+    </List>
   </section>
 );
 

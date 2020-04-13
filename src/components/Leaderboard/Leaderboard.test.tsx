@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Leaderboard from './index';
+import { Heading, List, Item } from './styles';
 
 const defaultProps = {
   heading: '',
@@ -31,7 +32,7 @@ describe('component: Leaderboard', () => {
 
     expect(
       wrapper
-        .find('h2')
+        .find(Heading)
         .text()
     ).toBe(heading);
   });
@@ -50,13 +51,13 @@ describe('component: Leaderboard', () => {
 
     expect(
       wrapper
-        .find('ul')
+        .find(List)
         .length
     ).toBe(1);
 
     expect(
       wrapper
-        .find('li')
+        .find(Item)
         .length
     ).toBe(items.length);
   });
@@ -76,7 +77,7 @@ describe('component: Leaderboard', () => {
     items.forEach((item, i) => {
       const spans = 
         wrapper
-          .find('li')
+          .find(Item)
           .at(i)
           .find('span');
 
