@@ -15,7 +15,19 @@ export const searchUser = (user: string) => api(
   `
   {
     user(login: "${user}") {
-      avatarUrl
+      avatarUrl,
+      repositories(first: 50, orderBy: { field: UPDATED_AT, direction: DESC }) {
+        nodes {
+          name,
+          updatedAt,
+          languages(first: 10) {
+            nodes {
+              name,
+              color
+            }
+          }
+        }
+      }
     }
   }
   `
