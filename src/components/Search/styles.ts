@@ -5,7 +5,7 @@ import { rem } from '../../styles/tools';
 const buttonSize = 40;
 const padding = 20;
 
-export const Wrapper = styled.div`
+export const Form = styled.form`
   position: relative;
 `;
 

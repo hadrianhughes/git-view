@@ -50,6 +50,22 @@ describe('container: Search', () => {
     expect(setSearchValue).toHaveBeenCalled();
   });
 
+  it('Should preventDefault when the form in the child component is submitted', () => {
+    const preventDefault = jest.fn();
+    const event = { preventDefault };
+
+    const wrapper = shallow(
+      <SearchContainer {...defaultProps} />
+    );
+
+    wrapper
+      .find(Search)
+      .props()
+      .onSubmit(event);
+
+    expect(preventDefault).toHaveBeenCalled();
+  });
+
   it('Should call the `performSearch` prop when the `onSubmit` prop of the child component is called', () => {
     const performSearch = jest.fn();
     const wrapper = shallow(
@@ -61,7 +77,7 @@ describe('container: Search', () => {
     wrapper
       .find(Search)
       .props()
-      .onSubmit();
+      .onSubmit({ preventDefault: () => {} });
 
       expect(performSearch).toHaveBeenCalled();
   });

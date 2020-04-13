@@ -1,10 +1,10 @@
 import React from 'react';
-import { Input, Button, Wrapper } from './styles';
+import { Input, Button, Form } from './styles';
 
 interface PropTypes {
   value: string;
   onChange: (SyntheticEvent) => void;
-  onSubmit: (any) => void;
+  onSubmit: (SyntheticEvent) => void;
   placeholder?: string;
 }
 
@@ -14,14 +14,14 @@ const Search = ({
   onSubmit,
   placeholder
 }: PropTypes) => (
-  <Wrapper>
+  <Form>
     <Input
       type="text"
       value={value}
       placeholder={placeholder}
       onChange={onChange} />
-    <Button onClick={onSubmit}>Submit</Button>
-  </Wrapper>
+    <Button type="submit" onClick={onSubmit}>Submit</Button>
+  </Form>
 );
 
 export default Search;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Search from './index';
-import { Input, Button } from './styles';
+import { Input, Button, Form } from './styles';
 
 const defaultProps = {
   value: '',
@@ -10,11 +10,12 @@ const defaultProps = {
 };
 
 describe('component: Search', () => {
-  it('Should render an `input` tag and a `button` tag', () => {
+  it('Should render a `form` tag, an `input` tag and a `button` tag', () => {
     const wrapper = shallow(
       <Search {...defaultProps} />
     );
 
+    expect(wrapper.find(Form).length).toBe(1);
     expect(wrapper.find(Input).length).toBe(1);
     expect(wrapper.find(Button).length).toBe(1);
   });

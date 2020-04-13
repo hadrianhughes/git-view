@@ -16,11 +16,16 @@ export const SearchContainer = ({ searchValue, setSearchValue, performSearch }: 
     setSearchValue(value);
   };
 
+  const handleSubmit = (e: SyntheticEvent): void => {
+    e.preventDefault();
+    performSearch();
+  };
+
   return (
     <Search
       value={searchValue}
       onChange={handleChange}
-      onSubmit={performSearch}
+      onSubmit={handleSubmit}
       placeholder="Search..." />
   );
 };
